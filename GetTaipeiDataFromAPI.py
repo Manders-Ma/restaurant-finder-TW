@@ -21,13 +21,15 @@ def getData(type, page_token, API_KEY, dicOfTaipeiRest):
     for rest in rests:
         compound_code = rest["plus_code"]["compound_code"]
         compound_code = re.sub("[a-zA-Z0-9\W]", "", compound_code)
-        region = compound_code[-3:]
+        region = "臺北市"
         town = compound_code[:-3]
         dicOfTaipeiRest["Name"].append(rest["name"])
         dicOfTaipeiRest["Description"].append("")
         dicOfTaipeiRest["Add"].append(rest["formatted_address"])
         dicOfTaipeiRest["Region"].append(region)
         dicOfTaipeiRest["Town"].append(town)
+        dicOfTaipeiRest["Lat"].append(rest["geometry"]["location"]["lat"])
+        dicOfTaipeiRest["Lng"].append(rest["geometry"]["location"]["lng"])
 
         place_id = rest["place_id"]
         url = "https://maps.googleapis.com/maps/api/place/details/json?place_id={}&fields=formatted_phone_number%2Curl%2Copening_hours&language=zh-TW&key={}".format(
@@ -54,7 +56,7 @@ with open(apiKey_file_path, "r") as file:
 
 page_token = ""
 types = ["restaurant", "bar", "meal_delivery", "meal_takeaway", "cafe"]
-dicOfTaipeiRest = {"Name":[], "Description":[], "Add":[], "Region":[], "Town":[],
+dicOfTaipeiRest = {"Name":[], "Description":[], "Add":[], "Region":[], "Town":[],"Lat":[], "Lng":[],
                     "Opentime":[], "Parkinginfo":[], "Tel":[], "url":[]}
 for type in types:
     page_token = ""
@@ -63,6 +65,8 @@ for type in types:
         page_token, dicOfTaipeiRest = getData(type, page_token, API_KEY, dicOfTaipeiRest)
 
 df = pd.DataFrame(data=dicOfTaipeiRest)
+df.dropna(subset=["Lat", "Lng"], inplace=True)
 df.drop_duplicates(subset=["Name"], ignore_index=True, inplace=True)
+df["fk_location_id"] = [1] * len(df)
 df.to_csv("./dataset/TaipeiRest.csv", index=False,
         header=False, encoding="utf-8-sig")

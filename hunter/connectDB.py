@@ -5,6 +5,7 @@ import sqlalchemy as sa
 import pg8000
 import os
 
+
 class Environment:
     def __init__(self) -> None:
         self.GOOGLE_APPLICATION_CREDENTIALS = "D:/DabaseDesignProject/key/database-project-348308-2e88dd61cf17.json"
@@ -60,24 +61,40 @@ class Location(BASE):
 
 
 class Restaurant(BASE):
-
     __tablename__ = 'restaurant'
-    Name = sa.Column(sa.String(100), primary_key=True)
+    Name = sa.Column(sa.String(150), primary_key=True)
     Description = sa.Column(sa.String(400))
-    Add = sa.Column(sa.String(60))
+    Add = sa.Column(sa.String(100))
     Region = sa.Column(sa.String(10))
     Town = sa.Column(sa.String(10))
+    Lat = sa.Column(sa.String(20))
+    Lng = sa.Column(sa.String(20))
     Opentime = sa.Column(sa.String(500))
     Parkinginfo = sa.Column(sa.String(100))
     Tel = sa.Column(sa.String(40))
     url = sa.Column(sa.String(200))
-
     fk_location_id = sa.Column(
         sa.Integer, sa.ForeignKey('location.location_id'))
+    
+    Rparkings = sa.orm.relationship('Parking')
 
+class ParkingLot(BASE):
+    __tablename__ = 'parking_lot'
+    PL_id = sa.Column(sa.String(100), primary_key=True)
+    PLname = sa.Column(sa.String(100))
+    PLurl = sa.Column(sa.String(200))
+
+    parkings = sa.orm.relationship('Parking')
+
+    
+class Parking(BASE):
+    __tablename__ = 'parking'
+    fk_Name = sa.Column(sa.String(150), sa.ForeignKey('restaurant.Name'), primary_key=True)
+    fk_PL_id = sa.Column(sa.String(100), sa.ForeignKey('parking_lot.PL_id'), primary_key = True)
 
 engine = init_connection_engine()
 Session = sa.orm.sessionmaker(bind=engine)
+BASE.metadata.create_all(engine)
 
 if __name__ == '__main__':
     s = Session()
