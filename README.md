@@ -5,7 +5,7 @@
 - Different from the past that only displayed the distance, it is changed to use a more intuitive traffic time.
 
 ## ER diagram
-![ER](.img/ER-diagram.png)
+![ER](./img/ER-diagram.png)
 
 
 ## Example
