@@ -40,7 +40,7 @@
             {% for element in tables %}
             <tr>
                 {% if element[1].url %}
-                    <td><a href="{{element[1].url}}"> {{ element[1].Name }} </a></td>
+                <td><a href="{{element[1].url}}"> {{ element[1].Name }} </a></td>
                 {% else %}
                 <td>{{ element[1].Name }}</td>
                 {% endif %}
