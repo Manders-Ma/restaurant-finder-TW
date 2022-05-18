@@ -7,6 +7,11 @@
 ## ER diagram
 ![ER](./img/ER-diagram.png)
 
+## Relational schema diagram
+![Relational](./img/RelationalSchema.png)
+
 
 ## Example
 ![show](./img/show.PNG)
+
+![park](./img/park.PNG)
