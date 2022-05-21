@@ -11,7 +11,8 @@
  - Service : google map API (Distance Matrix API, Places API)
 
 ## Prerequisite
-1. Create a virtual environment : 
+1. 
+Create a virtual environment : 
     
     python -m venv <environment path>
 
