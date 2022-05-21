@@ -13,11 +13,11 @@
 ## Prerequisite
 ### **1. Prepare Python Environment**
 
-- Create a virtual environment : 
+Create a virtual environment : 
     
     python -m venv <environment path>
 
-- Download library : 
+Download library : 
 
     pip install -r requirement.txt
 
