@@ -27,9 +27,9 @@ Read Reference 1, Section : Create and manage---instances.
 
 **3. Setup google map API**
 
-Read [Reference](https://github.com/Manders-Ma/FoodSearchService-TW#reference) 2, Section : setup.
+Distance Matrix API -> Read [Reference](https://github.com/Manders-Ma/FoodSearchService-TW#reference) 2, Section : setup.
 
-Read [Reference](https://github.com/Manders-Ma/FoodSearchService-TW#reference) 3, Section : setup.
+Places API -> Read [Reference](https://github.com/Manders-Ma/FoodSearchService-TW#reference) 3, Section : setup.
 
 ## Reference
 1. [Use python to connect cloud sql (postgreSQL)](https://cloud.google.com/sql/docs/postgres/connect-connectors?hl=zh-tw)
