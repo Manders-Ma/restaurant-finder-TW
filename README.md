@@ -11,7 +11,7 @@
  - Service : google map API (Distance Matrix API, Places API)
 
 ## Prerequisite
-1. 
+1. **Prepare Python Environment**
 Create a virtual environment : 
     
     python -m venv <environment path>
@@ -20,8 +20,12 @@ Download library :
 
     pip install -r requirement.txt
 
-2. 
+2. **Create google cloud sql instances**
+Read Reference 1, Section : Create and manage---instances.
 
+3. **Setup google map API**
+Read Reference 2, Section : setup.
+Read Reference 3, Section : setup.
 
 ## Reference
 1. [Use python to connect cloud sql (postgreSQL)](https://cloud.google.com/sql/docs/postgres/connect-connectors?hl=zh-tw)
