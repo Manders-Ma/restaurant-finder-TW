@@ -31,6 +31,20 @@ Distance Matrix API -> Read [Reference](https://github.com/Manders-Ma/FoodSearch
 
 Places API -> Read [Reference](https://github.com/Manders-Ma/FoodSearchService-TW#reference) 3, Section : setup.
 
+**4. Create table and import data for database**
+
+You can use goole cloud sql interface to import data.Or use pgAdmin ([reference](https://www.youtube.com/watch?v=SPvA858VnX0&ab_channel=RandomCodingDood))
+
+Run "./hunter/connectDB.py" to create all the table what you need.
+
+import "./dataset/location.csv" for location table.
+import "./dataset/restaurant.csv" and "./dataset/TaipeiRest.csv" to restaurant table.
+
+Run "Preprocessing.py" to preprocess data and get park data(If you don't have park data).
+
+
+
+
 ## Reference
 1. [Use python to connect cloud sql (postgreSQL)](https://cloud.google.com/sql/docs/postgres/connect-connectors?hl=zh-tw)
 2. [Distance API document](https://developers.google.com/maps/documentation/distance-matrix)
