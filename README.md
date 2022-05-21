@@ -12,9 +12,11 @@
 
 ## Prerequisite
 1. Create a virtual environment : 
+    
     python -m venv <environment path>
 
 Download library : 
+
     pip install -r requirement.txt
 
 2. 
