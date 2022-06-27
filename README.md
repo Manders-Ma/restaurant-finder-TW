@@ -1,17 +1,19 @@
 # FoodSearchService-TW
 
 ## Brief Introduction
-- A simplified google map that considers traffic costs based on current location and provides more appropriate search functions.
-- Different from the past that only displayed the distance, it is changed to use a more intuitive traffic time.
+>A simplified google map that considers traffic costs based on current location and provides more appropriate search functions.
 
+>Different from the past that only displayed the distance, it is changed to use a more intuitive traffic time.
+---
 ## System Component
+
  - Frontend : HTML, CSS, Bootstrap
  - Backend : Flask, sqlAlchemy
  - Database : google cloud sql (postgreSQL)
  - Service : google map API (Distance Matrix API, Places API)
-
+---
 ## Prerequisite
-### **1. Prepare Python Environment**
+#### **1. Prepare Python Environment**
 
 Create a virtual environment : 
     
@@ -20,31 +22,41 @@ Create a virtual environment :
 Download library : 
 
     pip install -r requirement.txt
+<br>
 
-### **2. Create google cloud sql instances**
+#### **2. Create google cloud sql instances**
 
-- Read Reference 1, Section : Create and manage---instances.
+Read [Reference 1][Reference], Section : Create and manage---instances.
 
-### **3. Setup google map API**
+<br>
 
-- Distance Matrix API -> Read [Reference](https://github.com/Manders-Ma/FoodSearchService-TW#reference) 2, Section : setup.
+#### **3. Setup google map API**
 
-- Places API -> Read [Reference](https://github.com/Manders-Ma/FoodSearchService-TW#reference) 3, Section : setup.
+1. Distance Matrix API -> Read [Reference 2](https://github.com/Manders-Ma/FoodSearchService-TW#reference), Section : setup.
 
-### **4. Create table and import data for database**
+2. Places API -> Read [Reference 3](https://github.com/Manders-Ma/FoodSearchService-TW#reference), Section : setup.
 
-You can use goole cloud sql interface to import data.Or use pgAdmin ([reference](https://www.youtube.com/watch?v=SPvA858VnX0&ab_channel=RandomCodingDood))
+#### **4. Update ./hunter/config.py**
+1. set apiKey_file_path
+2. set GOOGLE_APPLICATION_CREDENTIALS key file(json)
+3. set database connection information (user, password, db, etc.)
 
-- Run "./hunter/connectDB.py" to create all the table what you need.
+<br>
 
-- import "./dataset/location.csv" for location table.
-- import "./dataset/restaurant.csv" and "./dataset/TaipeiRest.csv" to restaurant table.
+#### **5. Create table and import data for database**
 
-- Run "Preprocessing.py" to preprocess data and get park data(If you don't have park data).
+>You can use goole cloud sql interface to import data.Or use pgAdmin ([video reference](https://www.youtube.com/watch?v=SPvA858VnX0&ab_channel=RandomCodingDood))
+
+1. Run "./hunter/connectDB.py" to create all the table what you need.
+
+2. import "./dataset/location.csv" for location table.
+3. import "./dataset/restaurant.csv" and "./dataset/TaipeiRest.csv" to restaurant table.
+
+4. Run "Preprocessing.py" to preprocess data and get park data(If you don't have park data).
 
 
 
-
+---
 ## Reference
 1. [Use python to connect cloud sql (postgreSQL)](https://cloud.google.com/sql/docs/postgres/connect-connectors?hl=zh-tw)
 2. [Distance API document](https://developers.google.com/maps/documentation/distance-matrix)

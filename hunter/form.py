@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_wtf import FlaskForm
-from pandas import StringDtype
 from wtforms import StringField, RadioField, IntegerField, SubmitField, SelectField
 from wtforms.validators import DataRequired
 
