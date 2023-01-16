@@ -26,15 +26,15 @@ Download library :
 
 #### **2. Create google cloud sql instances**
 
-Read [Reference 1][Reference], Section : Create and manage---instances.
+Read [Reference 1](https://github.com/Manders-Ma/restaurant-finder-TW#reference), Section : Create and manage---instances.
 
 <br>
 
 #### **3. Setup google map API**
 
-1. Distance Matrix API -> Read [Reference 2](https://github.com/Manders-Ma/FoodSearchService-TW#reference), Section : setup.
+1. Distance Matrix API -> Read [Reference 2](https://github.com/Manders-Ma/restaurant-finder-TW#reference), Section : setup.
 
-2. Places API -> Read [Reference 3](https://github.com/Manders-Ma/FoodSearchService-TW#reference), Section : setup.
+2. Places API -> Read [Reference 3](https://github.com/Manders-Ma/restaurant-finder-TW#reference), Section : setup.
 
 #### **4. Update ./hunter/config.py**
 1. set apiKey_file_path
