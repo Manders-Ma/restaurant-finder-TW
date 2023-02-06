@@ -1,4 +1,4 @@
-# FoodSearchService-TW
+# restaurant-finder-TW
 
 ## Brief Introduction
 >A simplified google map that considers traffic costs based on current location and provides more appropriate search functions.
