@@ -1,9 +1,8 @@
 # restaurant-finder-TW
 
 ## Brief Introduction
->A simplified Google Map that considers traffic costs based on current location and provides more appropriate search functions.
+>A simplified Google Maps that takes into account traffic conditions based on your current location and provides more tailored search features.
 
->Different from the past, which only displayed the distance, it has been changed to use a more intuitive traffic time.
 ---
 ## System Component
 
